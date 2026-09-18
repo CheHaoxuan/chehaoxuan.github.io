@@ -505,7 +505,7 @@ body::-webkit-scrollbar-track {
 .content audio,
 .content iframe {
     display: block;
-    margin: 15px auto;
+    marqn: 15px auto;
     max-width: 75%;
 }
 .copycode {
