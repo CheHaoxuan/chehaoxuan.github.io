@@ -408,10 +408,10 @@
     width: 80%;
 }
 #menu #mobile-menu .items a {
-    color: #555;
+    color: #fff; /* 将这里的 #555 改为 #fff (纯白) */
 }
 #menu #mobile-menu .title {
-    color: #555;
+    color: #fff; /* 将这里的 #555 改为 #fff (纯白) */
     cursor: pointer;
     z-index: 1003;
 }
