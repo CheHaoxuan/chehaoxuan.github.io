@@ -983,3 +983,18 @@ ol li {
 #home-head #home-info .info .wrap h5 {
     color: #ff5252 !important; 
 }
+/* 优化 Waline 评论框文字颜色，使其更白更清晰 */
+.wl-editor, .wl-input, .wl-content p {
+    color: #eaeaea !important; /* 调高文字亮度 */
+}
+
+/* 提高输入框占位符（Placeholder）的清晰度 */
+.wl-editor::placeholder {
+    color: #888888 !important;
+    opacity: 1;
+}
+
+/* 加深博客正文默认字体颜色 */
+body {
+    color: #d2d2d2 !important; /* 让正文不再过灰 */
+}
