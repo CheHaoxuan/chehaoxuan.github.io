@@ -50,7 +50,7 @@
 
 
 
-<link rel="stylesheet" href="/css/main.css" />
+<link rel="stylesheet" href="/css/main.css?v=20261123" />
 
 <meta name="generator" content="Hexo 8.1.2"></head>
 <body>
@@ -158,57 +158,593 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div class="article">
-    <div>
-        <h1>软件分享</h1>
-    </div>
-    <div class="info">
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2026/11/23
-        </span>
-        
-        
-    </div>
-    
-    <div class="content" v-pre>
-        <p>这里收集和分享我日常自用、顺手好用的软件与工具，持续更新中。如果有好用的软件也欢迎在下方评论区交流推荐。</p>
-<hr>
-<h2 id="效率与日常工具"><a href="#效率与日常工具" class="headerlink" title="效率与日常工具"></a>效率与日常工具</h2><ul>
-<li><strong>（示例）软件名称</strong> · <code>macOS / Windows</code> — 一句话简介，说明它最打动你的地方 · <a target="_blank" rel="noopener" href="https://example.com/">官网</a></li>
-</ul>
-<hr>
-<h2 id="学习与开发"><a href="#学习与开发" class="headerlink" title="学习与开发"></a>学习与开发</h2><ul>
-<li><strong>（示例）软件名称</strong> · <code>全平台</code> — 一句话简介 · <a target="_blank" rel="noopener" href="https://example.com/">官网</a></li>
-</ul>
-<hr>
-<h2 id="影音与媒体"><a href="#影音与媒体" class="headerlink" title="影音与媒体"></a>影音与媒体</h2><ul>
-<li><strong>（示例）软件名称</strong> · <code>macOS</code> — 一句话简介 · <a target="_blank" rel="noopener" href="https://example.com/">官网</a></li>
-</ul>
-<hr>
-<h2 id="系统增强-实用小工具"><a href="#系统增强-实用小工具" class="headerlink" title="系统增强 &#x2F; 实用小工具"></a>系统增强 &#x2F; 实用小工具</h2><ul>
-<li><strong>（示例）软件名称</strong> · <code>macOS</code> — 一句话简介 · <a target="_blank" rel="noopener" href="https://example.com/">官网</a></li>
-</ul>
-<!--
-新增软件复制下面这一行即可：
-- **软件名称** · `适用平台` — 一句话简介 · [官网 / 下载](https://链接)
--->
+            
+<div id="software-store" v-pre>
+    <header class="store-hero">
+        <div class="store-hero-text">
+            <div class="store-eyebrow">APP STORE · 精选专栏</div>
+            <h1 class="store-title">软件分享</h1>
+            <p class="store-subtitle">
+                收录日常自用、顺手好用的效率与跨平台软件，持续更新
+                <span class="store-total-badge">共 12 款</span>
+            </p>
+        </div>
+        <div class="store-search-wrap">
+            <i class="fa-solid fa-magnifying-glass store-search-icon"></i>
+            <input
+                id="store-search-input"
+                type="text"
+                placeholder="搜索软件名、简介或平台…"
+                autocomplete="off"
+            />
+            <button id="store-search-clear" type="button" aria-label="清空搜索" hidden>
+                <i class="fa-solid fa-circle-xmark"></i>
+            </button>
+        </div>
+    </header>
 
+    <nav class="store-tabs" aria-label="软件分类筛选">
+        <button class="store-tab active" type="button" data-category="all">
+            <i class="fa-solid fa-border-all"></i>
+            <span>探索全部</span>
+        </button>
+        
+        <button class="store-tab" type="button" data-category="效率工具">
+            
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+            
+            <span>效率工具</span>
+        </button>
+        
+        <button class="store-tab" type="button" data-category="学习与开发">
+            
+            <i class="fa-solid fa-code"></i>
+            
+            <span>学习与开发</span>
+        </button>
+        
+        <button class="store-tab" type="button" data-category="影音与媒体">
+            
+            <i class="fa-solid fa-film"></i>
+            
+            <span>影音与媒体</span>
+        </button>
+        
+        <button class="store-tab" type="button" data-category="系统增强">
+            
+            <i class="fa-solid fa-sliders"></i>
+            
+            <span>系统增强</span>
+        </button>
+        
+    </nav>
+
+    
+    <section class="store-featured-section" id="store-featured">
+        <div class="store-section-head">
+            <h2>编辑精选</h2>
+            <span class="store-section-hint">TODAY</span>
+        </div>
+        <div class="store-featured-grid">
+            
+            <article class="featured-card" style="background: linear-gradient(135deg, rgba(255, 82, 82, 0.20) 0%, rgba(30, 30, 34, 0.95) 65%);">
+                <div class="featured-body">
+                    <span class="featured-tag">编辑精选</span>
+                    <h3 class="featured-name">Raycast</h3>
+                    <p class="featured-desc">替代系统聚焦搜索，集剪贴板历史、窗口管理、快速计算与海量插件于一身。</p>
+                </div>
+                <div class="featured-footer">
+                    <div class="app-squircle app-squircle-sm" style="background: linear-gradient(135deg, #ff5252 0%, #c62828 100%);">
+                        
+                        <i class="fa-solid fa-bolt"></i>
+                        
+                    </div>
+                    <div class="featured-app-meta">
+                        <div class="featured-app-title">Raycast</div>
+                        <div class="featured-app-sub">macOS · macOS 终极效率启动器</div>
+                    </div>
+                    <div class="app-action">
+                        <a class="app-get-btn" href="https://www.raycast.com/" target="_blank" rel="noopener noreferrer">获取</a>
+                        <span class="app-price-note">免费</span>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="featured-card" style="background: linear-gradient(135deg, rgba(38, 198, 218, 0.18) 0%, rgba(30, 30, 34, 0.95) 65%);">
+                <div class="featured-body">
+                    <span class="featured-tag">开源神器</span>
+                    <h3 class="featured-name">LocalSend</h3>
+                    <p class="featured-desc">开源免费、无需联网与登录，在 Mac、Windows、iPhone 与安卓之间高速互传文件。</p>
+                </div>
+                <div class="featured-footer">
+                    <div class="app-squircle app-squircle-sm" style="background: linear-gradient(135deg, #26c6da 0%, #00838f 100%);">
+                        
+                        <i class="fa-solid fa-paper-plane"></i>
+                        
+                    </div>
+                    <div class="featured-app-meta">
+                        <div class="featured-app-title">LocalSend</div>
+                        <div class="featured-app-sub">全平台 · 跨平台局域网文件快传</div>
+                    </div>
+                    <div class="app-action">
+                        <a class="app-get-btn" href="https://localsend.org/" target="_blank" rel="noopener noreferrer">获取</a>
+                        <span class="app-price-note">开源免费</span>
+                    </div>
+                </div>
+            </article>
+            
+        </div>
+    </section>
+    
+
+    <div id="store-shelves">
+        
+        <section class="store-shelf" data-shelf="效率工具">
+            <div class="store-section-head">
+                <h2>
+                    
+                    <i class="fa-solid fa-wand-magic-sparkles shelf-icon"></i>
+                    
+                    效率工具
+                </h2>
+                <span class="store-section-count">4 款</span>
+            </div>
+            <div class="store-app-grid">
+                
+                <article
+                    class="app-row"
+                    data-search="raycast 极速启动器、剪贴板历史与插件生态 macos 免费 效率工具"
+                >
+                    <div class="app-squircle" style="background: linear-gradient(135deg, #ff5252 0%, #c62828 100%);">
+                        
+                        <i class="fa-solid fa-bolt"></i>
+                        
+                    </div>
+                    <div class="app-info">
+                        <h3 class="app-name">Raycast</h3>
+                        <p class="app-subtitle">极速启动器、剪贴板历史与插件生态</p>
+                        <div class="app-badges">
+                            
+                            <span class="app-badge">macOS</span>
+                            
+                            
+                            <span class="app-badge app-badge-accent">免费</span>
+                            
+                        </div>
+                    </div>
+                    <div class="app-action">
+                        <a class="app-get-btn" href="https://www.raycast.com/" target="_blank" rel="noopener noreferrer">获取</a>
+                        <span class="app-price-note">免费</span>
+                    </div>
+                </article>
+                
+                <article
+                    class="app-row"
+                    data-search="localsend 开源跨平台局域网文件互传，替代隔空投送 全平台 开源 效率工具"
+                >
+                    <div class="app-squircle" style="background: linear-gradient(135deg, #26c6da 0%, #00838f 100%);">
+                        
+                        <i class="fa-solid fa-paper-plane"></i>
+                        
+                    </div>
+                    <div class="app-info">
+                        <h3 class="app-name">LocalSend</h3>
+                        <p class="app-subtitle">开源跨平台局域网文件互传，替代隔空投送</p>
+                        <div class="app-badges">
+                            
+                            <span class="app-badge">全平台</span>
+                            
+                            
+                            <span class="app-badge app-badge-accent">开源</span>
+                            
+                        </div>
+                    </div>
+                    <div class="app-action">
+                        <a class="app-get-btn" href="https://localsend.org/" target="_blank" rel="noopener noreferrer">获取</a>
+                        <span class="app-price-note">开源</span>
+                    </div>
+                </article>
+                
+                <article
+                    class="app-row"
+                    data-search="bob / pot 划词翻译与 ocr 截图识字，外语阅读利器 全平台 开源 效率工具"
+                >
+                    <div class="app-squircle" style="background: linear-gradient(135deg, #5c6bc0 0%, #283593 100%);">
+                        
+                        <i class="fa-solid fa-language"></i>
+                        
+                    </div>
+                    <div class="app-info">
+                        <h3 class="app-name">Bob / Pot</h3>
+                        <p class="app-subtitle">划词翻译与 OCR 截图识字，外语阅读利器</p>
+                        <div class="app-badges">
+                            
+                            <span class="app-badge">全平台</span>
+                            
+                            
+                            <span class="app-badge app-badge-accent">开源</span>
+                            
+                        </div>
+                    </div>
+                    <div class="app-action">
+                        <a class="app-get-btn" href="https://pot-app.com/" target="_blank" rel="noopener noreferrer">获取</a>
+                        <span class="app-price-note">开源</span>
+                    </div>
+                </article>
+                
+                <article
+                    class="app-row"
+                    data-search="obsidian 本地优先的双向链接 markdown 知识库 全平台 免费 效率工具"
+                >
+                    <div class="app-squircle" style="background: linear-gradient(135deg, #ab47bc 0%, #4a148c 100%);">
+                        
+                        <i class="fa-solid fa-gem"></i>
+                        
+                    </div>
+                    <div class="app-info">
+                        <h3 class="app-name">Obsidian</h3>
+                        <p class="app-subtitle">本地优先的双向链接 Markdown 知识库</p>
+                        <div class="app-badges">
+                            
+                            <span class="app-badge">全平台</span>
+                            
+                            
+                            <span class="app-badge app-badge-accent">免费</span>
+                            
+                        </div>
+                    </div>
+                    <div class="app-action">
+                        <a class="app-get-btn" href="https://obsidian.md/" target="_blank" rel="noopener noreferrer">获取</a>
+                        <span class="app-price-note">免费</span>
+                    </div>
+                </article>
+                
+            </div>
+        </section>
+        
+        <section class="store-shelf" data-shelf="学习与开发">
+            <div class="store-section-head">
+                <h2>
+                    
+                    <i class="fa-solid fa-code shelf-icon"></i>
+                    
+                    学习与开发
+                </h2>
+                <span class="store-section-count">4 款</span>
+            </div>
+            <div class="store-app-grid">
+                
+                <article
+                    class="app-row"
+                    data-search="visual studio code 轻量强大的现代代码编辑器，插件生态丰富 全平台 免费 学习与开发"
+                >
+                    <div class="app-squircle" style="background: linear-gradient(135deg, #29b6f6 0%, #0277bd 100%);">
+                        
+                        <i class="fa-solid fa-terminal"></i>
+                        
+                    </div>
+                    <div class="app-info">
+                        <h3 class="app-name">Visual Studio Code</h3>
+                        <p class="app-subtitle">轻量强大的现代代码编辑器，插件生态丰富</p>
+                        <div class="app-badges">
+                            
+                            <span class="app-badge">全平台</span>
+                            
+                            
+                            <span class="app-badge app-badge-accent">免费</span>
+                            
+                        </div>
+                    </div>
+                    <div class="app-action">
+                        <a class="app-get-btn" href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer">获取</a>
+                        <span class="app-price-note">免费</span>
+                    </div>
+                </article>
+                
+                <article
+                    class="app-row"
+                    data-search="iterm2 macos 最好用的增强型终端工具 macos 开源 学习与开发"
+                >
+                    <div class="app-squircle" style="background: linear-gradient(135deg, #43a047 0%, #1b5e20 100%);">
+                        
+                        <i class="fa-solid fa-square-terminal"></i>
+                        
+                    </div>
+                    <div class="app-info">
+                        <h3 class="app-name">iTerm2</h3>
+                        <p class="app-subtitle">macOS 最好用的增强型终端工具</p>
+                        <div class="app-badges">
+                            
+                            <span class="app-badge">macOS</span>
+                            
+                            
+                            <span class="app-badge app-badge-accent">开源</span>
+                            
+                        </div>
+                    </div>
+                    <div class="app-action">
+                        <a class="app-get-btn" href="https://iterm2.com/" target="_blank" rel="noopener noreferrer">获取</a>
+                        <span class="app-price-note">开源</span>
+                    </div>
+                </article>
+                
+                <article
+                    class="app-row"
+                    data-search="anki 基于间隔重复记忆曲线的背单词与复习神器 全平台 开源 学习与开发"
+                >
+                    <div class="app-squircle" style="background: linear-gradient(135deg, #42a5f5 0%, #1565c0 100%);">
+                        
+                        <i class="fa-solid fa-star"></i>
+                        
+                    </div>
+                    <div class="app-info">
+                        <h3 class="app-name">Anki</h3>
+                        <p class="app-subtitle">基于间隔重复记忆曲线的背单词与复习神器</p>
+                        <div class="app-badges">
+                            
+                            <span class="app-badge">全平台</span>
+                            
+                            
+                            <span class="app-badge app-badge-accent">开源</span>
+                            
+                        </div>
+                    </div>
+                    <div class="app-action">
+                        <a class="app-get-btn" href="https://apps.ankiweb.net/" target="_blank" rel="noopener noreferrer">获取</a>
+                        <span class="app-price-note">开源</span>
+                    </div>
+                </article>
+                
+                <article
+                    class="app-row"
+                    data-search="zotero 免费开源的学术文献管理与 pdf 批注工具 全平台 开源 学习与开发"
+                >
+                    <div class="app-squircle" style="background: linear-gradient(135deg, #ef5350 0%, #b71c1c 100%);">
+                        
+                        <i class="fa-solid fa-book-open"></i>
+                        
+                    </div>
+                    <div class="app-info">
+                        <h3 class="app-name">Zotero</h3>
+                        <p class="app-subtitle">免费开源的学术文献管理与 PDF 批注工具</p>
+                        <div class="app-badges">
+                            
+                            <span class="app-badge">全平台</span>
+                            
+                            
+                            <span class="app-badge app-badge-accent">开源</span>
+                            
+                        </div>
+                    </div>
+                    <div class="app-action">
+                        <a class="app-get-btn" href="https://www.zotero.org/" target="_blank" rel="noopener noreferrer">获取</a>
+                        <span class="app-price-note">开源</span>
+                    </div>
+                </article>
+                
+            </div>
+        </section>
+        
+        <section class="store-shelf" data-shelf="影音与媒体">
+            <div class="store-section-head">
+                <h2>
+                    
+                    <i class="fa-solid fa-film shelf-icon"></i>
+                    
+                    影音与媒体
+                </h2>
+                <span class="store-section-count">2 款</span>
+            </div>
+            <div class="store-app-grid">
+                
+                <article
+                    class="app-row"
+                    data-search="iina 专为 macos 设计的现代开源全能视频播放器 macos 开源 影音与媒体"
+                >
+                    <div class="app-squircle" style="background: linear-gradient(135deg, #ffa726 0%, #e65100 100%);">
+                        
+                        <i class="fa-solid fa-circle-play"></i>
+                        
+                    </div>
+                    <div class="app-info">
+                        <h3 class="app-name">IINA</h3>
+                        <p class="app-subtitle">专为 macOS 设计的现代开源全能视频播放器</p>
+                        <div class="app-badges">
+                            
+                            <span class="app-badge">macOS</span>
+                            
+                            
+                            <span class="app-badge app-badge-accent">开源</span>
+                            
+                        </div>
+                    </div>
+                    <div class="app-action">
+                        <a class="app-get-btn" href="https://iina.io/" target="_blank" rel="noopener noreferrer">获取</a>
+                        <span class="app-price-note">开源</span>
+                    </div>
+                </article>
+                
+                <article
+                    class="app-row"
+                    data-search="vlc media player 几乎通吃所有音视频格式的老牌开源播放器 全平台 开源 影音与媒体"
+                >
+                    <div class="app-squircle" style="background: linear-gradient(135deg, #ff7043 0%, #bf360c 100%);">
+                        
+                        <i class="fa-solid fa-clapperboard"></i>
+                        
+                    </div>
+                    <div class="app-info">
+                        <h3 class="app-name">VLC Media Player</h3>
+                        <p class="app-subtitle">几乎通吃所有音视频格式的老牌开源播放器</p>
+                        <div class="app-badges">
+                            
+                            <span class="app-badge">全平台</span>
+                            
+                            
+                            <span class="app-badge app-badge-accent">开源</span>
+                            
+                        </div>
+                    </div>
+                    <div class="app-action">
+                        <a class="app-get-btn" href="https://www.videolan.org/" target="_blank" rel="noopener noreferrer">获取</a>
+                        <span class="app-price-note">开源</span>
+                    </div>
+                </article>
+                
+            </div>
+        </section>
+        
+        <section class="store-shelf" data-shelf="系统增强">
+            <div class="store-section-head">
+                <h2>
+                    
+                    <i class="fa-solid fa-sliders shelf-icon"></i>
+                    
+                    系统增强
+                </h2>
+                <span class="store-section-count">2 款</span>
+            </div>
+            <div class="store-app-grid">
+                
+                <article
+                    class="app-row"
+                    data-search="stats 优雅免费的 macos 菜单栏硬件与网速监控 macos 开源 系统增强"
+                >
+                    <div class="app-squircle" style="background: linear-gradient(135deg, #66bb6a 0%, #2e7d32 100%);">
+                        
+                        <i class="fa-solid fa-gauge-high"></i>
+                        
+                    </div>
+                    <div class="app-info">
+                        <h3 class="app-name">Stats</h3>
+                        <p class="app-subtitle">优雅免费的 macOS 菜单栏硬件与网速监控</p>
+                        <div class="app-badges">
+                            
+                            <span class="app-badge">macOS</span>
+                            
+                            
+                            <span class="app-badge app-badge-accent">开源</span>
+                            
+                        </div>
+                    </div>
+                    <div class="app-action">
+                        <a class="app-get-btn" href="https://github.com/exelban/stats" target="_blank" rel="noopener noreferrer">获取</a>
+                        <span class="app-price-note">开源</span>
+                    </div>
+                </article>
+                
+                <article
+                    class="app-row"
+                    data-search="mos 让普通外接鼠标在 macos 上拥有丝滑平滑滚动 macos 开源 系统增强"
+                >
+                    <div class="app-squircle" style="background: linear-gradient(135deg, #78909c 0%, #37474f 100%);">
+                        
+                        <i class="fa-solid fa-computer-mouse"></i>
+                        
+                    </div>
+                    <div class="app-info">
+                        <h3 class="app-name">Mos</h3>
+                        <p class="app-subtitle">让普通外接鼠标在 macOS 上拥有丝滑平滑滚动</p>
+                        <div class="app-badges">
+                            
+                            <span class="app-badge">macOS</span>
+                            
+                            
+                            <span class="app-badge app-badge-accent">开源</span>
+                            
+                        </div>
+                    </div>
+                    <div class="app-action">
+                        <a class="app-get-btn" href="https://mos.caldis.me/" target="_blank" rel="noopener noreferrer">获取</a>
+                        <span class="app-price-note">开源</span>
+                    </div>
+                </article>
+                
+            </div>
+        </section>
+        
     </div>
-    
-    
-    
-    
-    
-    <div id="comment">
-        <div id="waline-container"></div>
+
+    <div id="store-empty" class="store-empty" hidden>
+        <i class="fa-solid fa-box-open"></i>
+        <p>没有找到匹配的软件，换个关键词试试，或在下方评论区推荐给我吧～</p>
     </div>
+
     
-    
+    <section class="store-comments-card">
+        <div class="store-section-head">
+            <h2>留言与软件推荐</h2>
+            <span class="store-section-hint">COMMENTS</span>
+        </div>
+        <div id="comment">
+            <div id="waline-container"></div>
+        </div>
+    </section>
     
 </div>
+
+<script>
+(function () {
+    const tabs = document.querySelectorAll("#software-store .store-tab");
+    const shelves = document.querySelectorAll("#software-store .store-shelf");
+    const featured = document.getElementById("store-featured");
+    const searchInput = document.getElementById("store-search-input");
+    const clearBtn = document.getElementById("store-search-clear");
+    const emptyBox = document.getElementById("store-empty");
+    let activeCategory = "all";
+
+    function applyFilter() {
+        const keyword = (searchInput ? searchInput.value : "").trim().toLowerCase();
+        if (clearBtn) clearBtn.hidden = !keyword;
+
+        if (featured) {
+            featured.style.display = activeCategory === "all" && !keyword ? "" : "none";
+        }
+
+        let visibleTotal = 0;
+        shelves.forEach((shelf) => {
+            const shelfName = shelf.getAttribute("data-shelf");
+            const categoryMatch = activeCategory === "all" || shelfName === activeCategory;
+            if (!categoryMatch) {
+                shelf.style.display = "none";
+                return;
+            }
+            const rows = shelf.querySelectorAll(".app-row");
+            let shelfVisible = 0;
+            rows.forEach((row) => {
+                const hay = row.getAttribute("data-search") || "";
+                const match = !keyword || hay.indexOf(keyword) !== -1;
+                row.style.display = match ? "" : "none";
+                if (match) shelfVisible++;
+            });
+            shelf.style.display = shelfVisible > 0 ? "" : "none";
+            visibleTotal += shelfVisible;
+        });
+
+        if (emptyBox) emptyBox.hidden = visibleTotal > 0;
+    }
+
+    tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+            tabs.forEach((t) => t.classList.remove("active"));
+            tab.classList.add("active");
+            activeCategory = tab.getAttribute("data-category") || "all";
+            applyFilter();
+        });
+    });
+
+    if (searchInput) {
+        searchInput.addEventListener("input", applyFilter);
+    }
+    if (clearBtn && searchInput) {
+        clearBtn.addEventListener("click", () => {
+            searchInput.value = "";
+            applyFilter();
+            searchInput.focus();
+        });
+    }
+})();
+</script>
 
             <footer id="footer">
     <div id="footer-wrap">
