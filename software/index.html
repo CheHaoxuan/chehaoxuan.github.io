@@ -683,69 +683,6 @@
     
 </div>
 
-<script>
-(function () {
-    const tabs = document.querySelectorAll("#software-store .store-tab");
-    const shelves = document.querySelectorAll("#software-store .store-shelf");
-    const featured = document.getElementById("store-featured");
-    const searchInput = document.getElementById("store-search-input");
-    const clearBtn = document.getElementById("store-search-clear");
-    const emptyBox = document.getElementById("store-empty");
-    let activeCategory = "all";
-
-    function applyFilter() {
-        const keyword = (searchInput ? searchInput.value : "").trim().toLowerCase();
-        if (clearBtn) clearBtn.hidden = !keyword;
-
-        if (featured) {
-            featured.style.display = activeCategory === "all" && !keyword ? "" : "none";
-        }
-
-        let visibleTotal = 0;
-        shelves.forEach((shelf) => {
-            const shelfName = shelf.getAttribute("data-shelf");
-            const categoryMatch = activeCategory === "all" || shelfName === activeCategory;
-            if (!categoryMatch) {
-                shelf.style.display = "none";
-                return;
-            }
-            const rows = shelf.querySelectorAll(".app-row");
-            let shelfVisible = 0;
-            rows.forEach((row) => {
-                const hay = row.getAttribute("data-search") || "";
-                const match = !keyword || hay.indexOf(keyword) !== -1;
-                row.style.display = match ? "" : "none";
-                if (match) shelfVisible++;
-            });
-            shelf.style.display = shelfVisible > 0 ? "" : "none";
-            visibleTotal += shelfVisible;
-        });
-
-        if (emptyBox) emptyBox.hidden = visibleTotal > 0;
-    }
-
-    tabs.forEach((tab) => {
-        tab.addEventListener("click", () => {
-            tabs.forEach((t) => t.classList.remove("active"));
-            tab.classList.add("active");
-            activeCategory = tab.getAttribute("data-category") || "all";
-            applyFilter();
-        });
-    });
-
-    if (searchInput) {
-        searchInput.addEventListener("input", applyFilter);
-    }
-    if (clearBtn && searchInput) {
-        clearBtn.addEventListener("click", () => {
-            searchInput.value = "";
-            applyFilter();
-            searchInput.focus();
-        });
-    }
-})();
-</script>
-
             <footer id="footer">
     <div id="footer-wrap">
         <div>
@@ -774,6 +711,76 @@
         
     </div>
     <script src="/js/main.js"></script>
+    
+    <script>
+    (function () {
+        let activeCategory = "all";
+
+        function applyFilter() {
+            const searchInput = document.getElementById("store-search-input");
+            const clearBtn = document.getElementById("store-search-clear");
+            const featured = document.getElementById("store-featured");
+            const shelves = document.querySelectorAll("#software-store .store-shelf");
+            const emptyBox = document.getElementById("store-empty");
+            const keyword = (searchInput ? searchInput.value : "").trim().toLowerCase();
+
+            if (clearBtn) clearBtn.hidden = !keyword;
+            if (featured) {
+                featured.style.display = activeCategory === "all" && !keyword ? "" : "none";
+            }
+
+            let visibleTotal = 0;
+            shelves.forEach((shelf) => {
+                const shelfName = shelf.getAttribute("data-shelf");
+                const categoryMatch = activeCategory === "all" || shelfName === activeCategory;
+                if (!categoryMatch) {
+                    shelf.style.display = "none";
+                    return;
+                }
+                const rows = shelf.querySelectorAll(".app-row");
+                let shelfVisible = 0;
+                rows.forEach((row) => {
+                    const hay = row.getAttribute("data-search") || "";
+                    const match = !keyword || hay.indexOf(keyword) !== -1;
+                    row.style.display = match ? "" : "none";
+                    if (match) shelfVisible++;
+                });
+                shelf.style.display = shelfVisible > 0 ? "" : "none";
+                visibleTotal += shelfVisible;
+            });
+
+            if (emptyBox) emptyBox.hidden = visibleTotal > 0;
+        }
+
+        document.addEventListener("click", function (e) {
+            const tab = e.target.closest("#software-store .store-tab");
+            if (tab) {
+                document.querySelectorAll("#software-store .store-tab").forEach((t) => {
+                    t.classList.remove("active");
+                });
+                tab.classList.add("active");
+                activeCategory = tab.getAttribute("data-category") || "all";
+                applyFilter();
+                return;
+            }
+            if (e.target.closest("#store-search-clear")) {
+                const searchInput = document.getElementById("store-search-input");
+                if (searchInput) {
+                    searchInput.value = "";
+                    applyFilter();
+                    searchInput.focus();
+                }
+            }
+        });
+
+        document.addEventListener("input", function (e) {
+            if (e.target && e.target.id === "store-search-input") {
+                applyFilter();
+            }
+        });
+    })();
+    </script>
+    
     
     
 
